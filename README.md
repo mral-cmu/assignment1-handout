@@ -1,4 +1,4 @@
-# 16-362 Assignment 1: Quadrotor Dynamics and Control (Total: 90 points)
+# 16-362 Assignment 1: Quadrotor Dynamics and Control (Total: 100 points)
 
 Goals: In this assignment, you will implement the mathematical model
 of a quadrotor's dynamics as well as a position and attitude
