@@ -69,7 +69,7 @@ you will need to implement the following four functions:
 
 * `construct_mixer` (5 points)
 * `calculate_world_frame_linear_acceleration` (5 points)
-* `calculate_angular_acceleration_com_offset` (5 points)
+* `calculate_angular_acceleration` (5 points)
 * `ode_step` (15 points)
 
 ### 1.1 `construct_mixer`
@@ -79,7 +79,7 @@ slides.
 ### 1.1 `calculate_world_frame_linear_acceleration`
 In this function you will implement Equation (4.2) from [1].
 
-### 1.2 `calculate_angular_acceleration_com_offset`
+### 1.2 `calculate_angular_acceleration`
 In this function you will implement Equation (4.3) from [1].
 
 ### 1.3 `ode_step`
