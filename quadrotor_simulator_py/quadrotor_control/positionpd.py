@@ -120,9 +120,6 @@ class QuadrotorPositionControllerPD:
         # get updated state
         self.update_state()
 
-        # get updated reference
-        self.get_reference_state()
-
         # calculate the command
         self.compute_command()
 
