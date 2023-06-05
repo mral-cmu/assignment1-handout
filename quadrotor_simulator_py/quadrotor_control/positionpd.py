@@ -21,13 +21,12 @@ class QuadrotorPositionControllerPD:
         self.state_ref = State()
         self.tracking_error = TrackingError()
 
-        self.Rdes = None
+        self.Rdes = np.eye(3)
         self.Rcurr = None
-        self.accel_des = None
-        self.angvel_des = None
-        self.angacc_des = None
-        self.mass = None
-        self.a_des = None
+        self.accel_des = 0.0
+        self.angvel_des = np.zeros((3, 1))
+        self.angacc_des = np.zeros((3, 1))
+        self.mass = 0.0
 
         data = []
         with open(yaml_file, 'r') as stream:

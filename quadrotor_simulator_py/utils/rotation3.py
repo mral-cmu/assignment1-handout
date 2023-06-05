@@ -24,7 +24,7 @@ class Rotation3:
         # TODO: Fill me in
 
         Rot = Rotation3()
-        Rot.R = R
+        Rot.R = np.eye(3)
         return Rot
 
     def to_euler_zyx(self):
@@ -61,7 +61,7 @@ class Rotation3:
         # TODO: Fill me in
 
         Rot = Rotation3()
-        Rot.R = R
+        Rot.R = np.eye(3)
         return Rot
 
     def to_quat(self):

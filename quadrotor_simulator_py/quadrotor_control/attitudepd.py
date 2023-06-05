@@ -12,7 +12,7 @@ class QuadrotorAttitudeControllerPD:
     def __init__(self, yaml_file):
         self.cm_offset = np.zeros((3, 1))
         self.inertia = np.eye(3)
-        self.inertia_inf = np.eye(3)
+        self.inertia_inv = np.eye(3)
         self.current_state = State()
         self.kR = np.zeros((3, 1))
         self.kOm = np.zeros((3, 1))

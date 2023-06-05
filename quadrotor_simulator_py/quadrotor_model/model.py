@@ -9,6 +9,7 @@ from quadrotor_simulator_py.quadrotor_control.state import State
 from quadrotor_simulator_py.quadrotor_model.mixer import QuadMixer
 from quadrotor_simulator_py.utils.quaternion import Quaternion
 from quadrotor_simulator_py.utils.pose import Pose
+from quadrotor_simulator_py.utils.pose import Rot3
 
 
 class RPMParameters:
@@ -244,5 +245,5 @@ class QuadrotorModel:
         s.rot = self.get_pose().get_so3()
         s.angvel = np.reshape(self.wb, (3, 1))
         s.angacc = np.reshape(self.ang_acc, (3, 1))
-        s.yaw = self.get_pose().yaw()
+        s.yaw = Rot3(self.get_pose().get_so3()).yaw()
         return s

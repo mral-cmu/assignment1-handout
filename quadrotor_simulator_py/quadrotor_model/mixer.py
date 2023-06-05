@@ -36,4 +36,5 @@ class QuadMixer:
 
         # TODO: Fill me in
 
+        self.mixer = np.eye(4)
         return self.mixer
