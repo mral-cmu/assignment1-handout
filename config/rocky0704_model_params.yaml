@@ -1,0 +1,89 @@
+# copied from Model.yaml
+mass: 2.652
+gravity_norm: 9.80665
+zoffset: 0.0 # hand-measured from PX4 to bottom of charging feet
+inertia:
+  Ixx: 0.0143
+  Iyy: 0.0175
+  Izz: 0.0210
+  Ixy: 2.9139e-7
+  Ixz: -0.0000191
+  Iyz: -0.0000425
+length: 0.15
+MultirotorMixer: QuadX
+motor_spread_angle: 0.7854
+yaw_offset: 0.0
+rotor:
+  enable_inertia: false
+  time_constant: 18.6108
+  use_full_quadratic: true
+  cT0: 0.19307
+  cT1: -1.0082e-04
+  cT2: 4.3564e-08
+  moment_scale: 0.0108
+  cT: 4.3564e-08
+pwm:
+  disarmed: 900
+  low: 1100
+  high: 1900
+  rpm_scale: 25000
+rpm:
+  min: 2970
+  idle: 5500
+  max: 20965
+mixer:
+  rpm_per_pwm:  22.4524
+  rpm_per_volt: 0.0
+  rpm_at_zero_pwm_and_volts: -20193.0
+normalized_torque_max:
+  x: 1.0
+  y: 1.0
+  z: 0.5
+drag_model:
+  cD: 0.029
+  effective_tippathplane_z: 0.1
+wind:
+  enable: false
+  heading: -2.3562
+  velocity: {min: 0, max: 6, sigma: 0.2}
+  distance: {baseline: 3, close: 1, far: 5}
+  drag_coeff: 0.3
+
+# inserted myself
+center_of_mass:
+  enable: false
+
+# copied from rotors.yaml
+num_rotors: 4
+
+# copied from ControlPositionPD.yaml
+gains:
+  ang:
+    x: 20.0
+    y: 15.0
+    z: 15.0
+  pos:
+    x: 6.25
+    y: 6.25
+    z: 16.0
+  rot:
+    x: 110.0
+    y: 89.0
+    z: 70.0
+  vel:
+    x: 5.0
+    y: 5.0
+    z: 8.0
+
+
+# copied from BatterySim.yaml
+battery:
+  voltage:
+    V0: 16.5
+    V1: 15.5
+    V2: 14.3
+    V3: 7.0
+  time:
+    t1: 75
+    t2: 900
+    t3: 1000

@@ -174,16 +174,19 @@ class QuadrotorModel:
     def calculate_world_frame_linear_acceleration(self, model, ang_acc, wb, Rwb, u1):
 
         # TODO: Fill me in
+
         return np.zeros((3, 1))
 
-    def calculate_angular_acceleration_com_offset(self, model, moments, wb, Fdes):
+    def calculate_angular_acceleration(self, model, moments, wb, Fdes):
 
         # TODO: Fill me in
+
         return np.zeros((3, 1))
 
     def ode_step(self, t, x):
 
         # TODO: Fill me in
+
         xdot = np.zeros((17, 1))
         return xdot.flatten()
 
