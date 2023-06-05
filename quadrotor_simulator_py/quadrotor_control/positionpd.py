@@ -52,9 +52,6 @@ class QuadrotorPositionControllerPD:
     def update_state(self):
         self.Rcurr = self.current_state.rot
 
-    def get_reference_state(self):
-        pass
-
     def set_current_state(self, state_in):
         self.current_state = state_in
         self.update_state()
