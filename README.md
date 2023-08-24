@@ -4,6 +4,10 @@ Goals: In this assignment, you will implement the mathematical model
 of a quadrotor's dynamics as well as a position and attitude
 controller to track simple trajectories.
 
+### Academic Integrity
+1. Do not publicly share your solution (using GitHub or otherwise)
+2. Collaboration is encouraged but you should write final code on your own.
+
 ## 0. Rotations (20 points)
 The directory containing rotation representations is in `rotation3.py`.
 In this part of the assignment you will write the code to perform
