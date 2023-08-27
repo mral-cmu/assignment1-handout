@@ -108,15 +108,33 @@ class QuadrotorAttitudeControllerPD:
         self.current_state = s
 
     def wrench_to_rotor_forces(self, thrust, torque):
+        """ Calculates rotor forces from thrust and torques.
 
-        # TODO: Fill me in
+        Args:
+            thrust: scalar value representing thrust
+            torque: 3x1 np array of  torques
+
+        Output:
+            rotor_forces: 4x1 numpy matrix representing rotor forces
+        """
+
+        # TODO: Assignment 1, Problem 4.1
 
         rotor_forces = np.zeros((4, 1))
         return rotor_forces
 
     def force_to_rpm(self, forces):
+        """ Calculates rotor RPMs from forces. You will need to use the
+                quadratic formula to solve for the RPM.
 
-        # TODO: Fill me in
+        Args:
+            forces: 4x1 numpy matrix representing rotor forces
+
+        Output:
+            uW: 4x1 numpy matrix representing RPMs
+        """
+
+        # TODO: Assignment 1, Problem 4.2
 
         uW = np.zeros((4, 1))
         return uW
@@ -131,4 +149,18 @@ class QuadrotorAttitudeControllerPD:
         return rpm_out
 
     def run_ctrl(self):
+        """ This function executes the following:
+                1. Calculates the rotation error metric
+                2. Calculates the PD control law discussed in the lecture slides
+                3. Calculates the desired moments by pre-multiplying Equation 2.68 of [5] by the inertia matrix.
+                4. Calculates the rotor forces
+                5. Calculates the rpms
+                6. Calculates the saturated rpms
+
+        Output:
+            sat_rpms: 4x1 numpy matrix representing saturated RPMs
+        """
+
+        # TODO: Assignment 1, Problem 4.3
+
         return np.zeros((4, 1))

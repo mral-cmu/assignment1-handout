@@ -43,7 +43,7 @@ the following conversions:
 
 All functions are contained within the rotation3.py file.
 More information about each function follows.
-Your code will be graded using Autolab. See Section 4 for
+Your code will be graded using Autolab. See Section 5 for
 details about uploading and receiving scores for your
 implementations.
 
@@ -161,32 +161,33 @@ This function contains the following functionality:
 4. calculates the desired angular velocities and accelerations, which will
    be used in the inner control loop (detailed in the next section)
 
-## 3. Attitude Controller (15 points)
+## 4. Attitude Controller (15 points)
 You will need to write the following functions:
 
 * `wrench_to_rotor_forces`
 * `force_to_rpm`
 * `run_ctrl`
 
-### 3.1 `wrench_to_rotor_forces`
+### 4.1 `wrench_to_rotor_forces`
 Uses the inverse of the mixer matrix to calculate rotor forces from
 the thrust and torques.
 
-### 3.2 `force_to_rpm`
-Uses the forces to calculates the RPMs using the thrust coefficients.
+### 4.2 `force_to_rpm`
+Uses the forces to calculates the RPMs using the thrust coefficients
+and the quadratic formula.
 
-### 3.3 `run_ctrl`
+### 4.3 `run_ctrl`
 This function contains the following functionality:
 
-1. calculates the error on orientation (see page 21 of [1])
-2. calculates the angular velocity error (see page 21 of [1])
+1. calculates the rotation error metric (see page 21 of [1])
+2. calculates the PD control law discussed in the lecture slides
 3. calculates the desired moments by pre-multiplying Equation 2.68 of
    [5] by the inertia matrix.
 4. calculates the rotor forces using the `wrench_to_rotor_forces` function
 5. calculates rpms from the rotor forces using the `force_to_rpm` function
 6. calculates saturated rpms and returns
 
-## 4. Grading with AutoLab
+## 5. Grading with AutoLab
 To have your solutions graded, you will need to tar the `quadrotor_simulator_py`
 folder and upload to autolab.
 
