@@ -63,30 +63,66 @@ class QuadrotorPositionControllerPD:
         self.state_ref = ref_in
 
     def compute_body_z_accel(self, a_des, R_curr):
+        """ Calculates the body-frame z-acceleration
 
-        # TODO: Fill me in
+        Args:
+            a_des: 3x1 numpy array representing the desired acceleration
+            R_curr: 3x3 rotation matrix representing Rwb
+
+        Output:
+            u: scalar value representing body-frame z-acceleration
+        """
+
+        # TODO: Assignment 1, Problem 3.1
 
         return 0
 
     def compute_hod_refs(self, acc_vec_des, flat_ref, R_des):
+        """ Calculates the desired angular velocities and accelerations.
 
-        # TODO: Fill me in
+        Args:
+            acc_vec_des: 3x1 numpy array representing the desired acceleration
+            flat_ref: class instance of State() containing the trajectory reference
+            R_des: desired rotation
+
+        Output:
+            angvel_des: 3x1 numpy array representing desired angular velocity
+            angacc_des: 3x1 numpy array representing desired angular acceleration
+        """
+
+        # TODO: Assignment 1, Problem 3.3
 
         angvel_des = np.zeros((3, 1))
         angacc_des = np.zeros((3, 1))
         return (angvel_des, angacc_des)
 
     def compute_orientation(self, a_des, yaw_ref):
+        """ Calculates the desired orientation
 
-        # TODO: Fill me in
+        Args:
+            a_des: 3x1 numpy array representing the desired acceleration
+            yaw_ref: yaw reference
+
+        Output:
+            R_des: 3x3 numpy matrix representing desired orientation
+        """
+
+        # TODO: Assignment 1, Problem 3.2
 
         R_des = np.eye(3)
         return R_des
 
     def compute_command(self):
+        """ This function contains the following functionality:
+                1. Computes the PD feedback-control terms from the position
+                   and velocity control errors.
+                2. Computes the desired rotation using compute_orientation.
+                3. Applies the thrust command to the body frame using
+                   compute_body_z_accel
+                4. Calculates the desired angular velocities and accelerations.
+        """
 
-        # TODO: Fill me in
-
+        # TODO: Assignment 1, Problem 3.4
         pass
 
     def get_cascaded_command(self):

@@ -116,7 +116,7 @@ In this function, you will need to implement the following:
 * calculate the derivative of the quaternion using Equation (7) of [2].
 * calculate the achieved RPMs
 
-## 2. Position Controller (15 points)
+## 3. Position Controller (15 points)
 You will need to write the following functions:
 
 * `compute_body_z_accel`
@@ -126,17 +126,22 @@ You will need to write the following functions:
 
 Detailed instructions for the contents of each function follow:
 
-### 2.1 `compute_body_z_accel`
+### 3.1 `compute_body_z_accel`
 This function uses the desired acceleration and current rotation to
 calculate the body frame z acceleration.  See page 20 of [1] for
 implementation details.
 
-### 2.2 `compute_orientation`
-This function calculates the desired orientation and takes the desired
-acceleration and yaw reference as input.  Use Equations (33) -- (36)
-from [4] to implement this function.
+The lecture slides on quadrotor control also discuss how to implement
+this function.
 
-### 2.3 `compute_hod_refs`
+### 3.2 `compute_orientation`
+This function calculates the desired orientation.  Use Equations (33)
+-- (36) from [4] to implement this function.
+
+The lecture slides on quadrotor control also discuss how to implement
+this function in detail.
+
+### 3.3 `compute_hod_refs`
 This function uses the desired acceleration vector, flat reference,
 and desired rotation to calculate the desired angular velocities and
 accelerations.  Use Equations (14)--(25) of [3] to calculate the
@@ -144,7 +149,10 @@ angular velocities.  Use Equation (103)--(105) of [4] to calculate the
 angular velocities. Disregard the drag component (i.e., set it to
 zero) to make your life easier.
 
-### 2.4 `compute_command`
+The lecture slides on quadrotor control also discuss how to implement
+this function in detail.
+
+### 3.4 `compute_command`
 This function contains the following functionality:
 1. computes the PD feedback-control terms from the position and
    velocity control errors via Equation (32) of [3]
