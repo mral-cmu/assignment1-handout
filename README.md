@@ -47,24 +47,36 @@ Your code will be graded using Autolab. See Section 4 for
 details about uploading and receiving scores for your
 implementations.
 
-### `to_euler_zyx`
+### 1.1 `to_euler_zyx`
 This function calculates the angles `phi=X`, `theta=Y`, `psi=Z` that
 represent the rotation in the Z-Y-X Tait-Bryant
 parameterization. The expected output is a 1x3 numpy array.  Note: the
 expected output is in reverse order from functions like MATLAB's
 `rotm2eul`; however, you can use this function to check your results.
 
-### `from_euler_zyx`
+### 1.2 `from_euler_zyx`
 This function calculates the 3x3 rotation matrix from the input angles
 `phi=X`, `theta=Y`, and `psi=Z`.
 
-### `to_quat`
-This function calculates the (w,x,y,z) quaternion from a 3x3 rotation
-matrix.
+### 1.3 `roll`
+This function extracts and returns the phi component from the
+rotation matrix.
 
-### `from_quat`
+### 1.4 `pitch`
+This function extracts and returns the theta component from the
+rotation matrix.
+
+### 1.5 `yaw`
+This function extracts and returns the psi component from the
+rotation matrix.
+
+### 1.6 `from_quat`
 This function calculates the 3x3 rotation matrix from a
 (w,x,y,z)-parameterized quaternion.
+
+### 1.7 `to_quat`
+This function calculates the (w,x,y,z) quaternion from a 3x3 rotation
+matrix.
 
 ## 1. Quadrotor Dynamics Simulator (50 points)
 The quadrotor dynamics simulator is contained in
