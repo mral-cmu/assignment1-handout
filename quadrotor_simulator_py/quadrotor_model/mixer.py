@@ -34,7 +34,15 @@ class QuadMixer:
 
     def construct_mixer(self):
 
-        # TODO: Fill me in
+        """ Calculates the mixer matrix, which converts
+                rotor speeds (e.g., RPMs) to force and torques.
+                Assumes NWU.
+
+        Output:
+            mixer: 4x4 numpy matrix
+        """
+
+        # TODO: Assignment 1, Problem 2.1
 
         self.mixer = np.eye(4)
         return self.mixer

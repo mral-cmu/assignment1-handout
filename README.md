@@ -78,10 +78,10 @@ This function calculates the 3x3 rotation matrix from a
 This function calculates the (w,x,y,z) quaternion from a 3x3 rotation
 matrix.
 
-## 1. Quadrotor Dynamics Simulator (50 points)
-The quadrotor dynamics simulator is contained in
-`quadrotor_simulator_py`. You will implement functions in this
-folder, zip your folder, and upload to Autolab for grading.
+## 2. Quadrotor Simulator (50 points)
+The quadrotor simulator is contained in `quadrotor_simulator_py`. You
+will implement functions in this folder, zip your folder, and upload
+to Autolab for grading.
 
 Test data and expected solutions are available for local testing.
 
@@ -93,17 +93,17 @@ you will need to implement the following four functions:
 * `calculate_angular_acceleration` (5 points)
 * `ode_step` (15 points)
 
-### 1.1 `construct_mixer`
+### 2.1 `construct_mixer`
 This function implements the mixer matrix as described in the lecture
 slides.
 
-### 1.1 `calculate_world_frame_linear_acceleration`
+### 2.2 `calculate_world_frame_linear_acceleration`
 In this function you will implement Equation (4.2) from [1].
 
-### 1.2 `calculate_angular_acceleration`
+### 2.3 `calculate_angular_acceleration`
 In this function you will implement Equation (4.3) from [1].
 
-### 1.3 `ode_step`
+### 2.4 `ode_step`
 This function implements the equations of motion for the quadrotor
 dynamics model. The ODE solver is used to integrate the equations over
 a period of time. The other two functions (1.1) and (1.2) will be
@@ -111,8 +111,8 @@ called in `ode_step`.
 
 In this function, you will need to implement the following:
 * Convert commanded RPMs (coming from the controller) to desired force and torques
-* calculate the angular acceleration (see 1.3)
-* calculate the linear acceleration (see 1.2)
+* calculate the angular acceleration (see 2.3)
+* calculate the linear acceleration (see 2.2)
 * calculate the derivative of the quaternion using Equation (7) of [2].
 * calculate the achieved RPMs
 

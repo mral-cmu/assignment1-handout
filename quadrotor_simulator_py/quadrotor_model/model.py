@@ -173,20 +173,69 @@ class QuadrotorModel:
         self.Twb = Pose(Twb)
 
     def calculate_world_frame_linear_acceleration(self, model, ang_acc, wb, Rwb, u1):
+        """ Calculates the linear acceleration of the aerial robot.
+                Hint: Use Equation (4.2) of Daniel Mellinger's PhD thesis
+                "Trajectory Generation and Control for Quadrotors"
 
-        # TODO: Fill me in
+        Args:
+            model: These are the self.model_params. This will give you the
+                offset of the center of mass in body frame coordinates (r_{off})
+            ang_acc: 3x1 numpy array representing angular acceleration
+            wb: 3x1 numpy array representing body-frame angular velocities
+            Rwb: 3x3 numpy matrix representing rotation
+            u1: scalar representing vehicle thrust
+
+        Output:
+            lin_acc: 3x1 numpy array representing linear acceleration
+        """
+
+        # TODO: Assignment 1, Problem 2.2
 
         return np.zeros((3, 1))
 
     def calculate_angular_acceleration(self, model, moments, wb, Fdes):
+        """ Calculates the vehicle angular acceleration.
+                Hint: Use Equation (4.3) of Daniel Mellinger's PhD thesis
+                "Trajectory Generation and Control for Quadrotors"
 
-        # TODO: Fill me in
+        Args:
+            model: These are the self.model_params. This will give you the
+                offset of the center of mass in body frame coordinates (r_{off})
+            moments: 3x1 numpy array representing the moments
+            wb: 3x1 numpy array representing body-frame angular velocities
+            Fdes: scalar representing desired vehicle thrust
+
+        Output:
+            ang acc: 3x1 numpy array representing angular acceleration
+        """
+
+        # TODO: Assignment 1, Problem 2.3
 
         return np.zeros((3, 1))
 
     def ode_step(self, t, x):
+        """ Numerically integrates the robot dynamics given an initialize
+                condition.
 
-        # TODO: Fill me in
+        Args:
+            t: interval over which to integrate [tstart, tstop]
+            x: 1x17 numpy array representing the following
+                x[0:3]: translation
+                x[3:7]: orientation represented as quaternion
+                x[7:10]: linear velocity (world frame)
+                x[10:13]: body-frame angular velocity
+                x[13:17]: rotor speeds (in RPM)
+
+        Output:
+            xdot: 1x17 numpy array containing the following
+                xdot[0:3]: world frame linear velocity
+                xdot[3:7]: derivative of quaternion
+                xdot[7:10]: linear acceleration (world frame)
+                xdot[10:13]: angular acceleration (body frame)
+                xdot[13:17]: derivative of rotor speeds
+        """
+
+        # TODO: Assignment 1, Problem 2.4
 
         xdot = np.zeros((17, 1))
         return xdot.flatten()
