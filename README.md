@@ -8,7 +8,30 @@ controller to track simple trajectories.
 1. Do not publicly share your solution (using GitHub or otherwise)
 2. Collaboration is encouraged but you should write final code on your own.
 
-## 0. Rotations (20 points)
+### 0.0 Setup
+Create a python virtual environment.
+```python
+python3.8 -m venv .venv
+```
+Source the environment
+```python
+source .venv/bin/activate
+```
+You will need to install the following dependencies.
+```python
+pip install scipy pyyaml numpy matplotlib scikit-learn
+```
+Download the assignment.
+```python
+git clone git@github.com:mral-cmu/assignment1-handout.git
+```
+Sample data is provided at [TODO](). You may download
+this data using the download script in the `data` directory.
+```python
+./download.sh
+```
+
+## 1.0 Rotations (20 points)
 The directory containing rotation representations is in `rotation3.py`.
 In this part of the assignment you will write the code to perform
 the following conversions:
@@ -50,24 +73,6 @@ folder, zip your folder, and upload to Autolab for grading.
 
 Test data and expected solutions are available for local testing.
 
-### 1.0 Setup
-Create a python virtual environment.
-```python
-python3.8 -m .venv venv
-```
-Source the environment
-```python
-source .venv/bin/activate
-```
-You will need to install the following dependencies.
-```python
-pip install scipy yaml numpy matplotlib scikit-learn
-```
-Sample data is provided at [TODO](). You may download
-this data using the download script in the `data` directory.
-```python
-./download.sh
-```
 To receive full credit on this portion of the assignment,
 you will need to implement the following four functions:
 
