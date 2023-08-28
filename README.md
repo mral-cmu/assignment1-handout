@@ -19,7 +19,7 @@ source .venv/bin/activate
 ```
 You will need to install the following dependencies.
 ```python
-pip install scipy pyyaml numpy matplotlib scikit-learn
+pip install scipy pyyaml numpy matplotlib scikit-learn gdown
 ```
 Download the assignment.
 ```python
