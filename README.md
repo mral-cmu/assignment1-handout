@@ -25,7 +25,7 @@ Download the assignment.
 ```python
 git clone git@github.com:mral-cmu/assignment1-handout.git
 ```
-Sample data is provided at [TODO](). You may download
+Sample data is provided to check your answers. You may download
 this data using the download script in the `data` directory.
 ```python
 ./download.sh
@@ -78,6 +78,13 @@ This function calculates the 3x3 rotation matrix from a
 This function calculates the (w,x,y,z) quaternion from a 3x3 rotation
 matrix.
 
+## Checking your results
+There is a test in `test/test_orientation.py`. It will print out
+```python
+Tests Passed
+```
+on success and assert an error if it fails.
+
 ## 2. Quadrotor Simulator (50 points)
 The quadrotor simulator is contained in `quadrotor_simulator_py`. You
 will implement functions in this folder, zip your folder, and upload
@@ -115,6 +122,16 @@ In this function, you will need to implement the following:
 * calculate the linear acceleration (see 2.2)
 * calculate the derivative of the quaternion using Equation (7) of [2].
 * calculate the achieved RPMs
+
+## Checking your results
+There is a test in `/test/test_ode_step.py`. If your results are
+correct, you should see the following output.
+
+![](./img/test_ode_step_pos.png)
+![](./img/test_ode_step_vel.png)
+![](./img/test_ode_step_acc.png)
+![](./img/test_ode_step_angvel.png)
+![](./img/test_ode_step_angacc.png)
 
 ## 3. Position Controller (15 points)
 You will need to write the following functions:
@@ -161,6 +178,10 @@ This function contains the following functionality:
 4. calculates the desired angular velocities and accelerations, which will
    be used in the inner control loop (detailed in the next section)
 
+![](./img/test_pos_ctrl_angacc.png)
+![](./img/test_pos_ctrl_angvel.png)
+![](./img/test_pos_ctrl_thrust.png)
+
 ## 4. Attitude Controller (15 points)
 You will need to write the following functions:
 
@@ -186,6 +207,8 @@ This function contains the following functionality:
 4. calculates the rotor forces using the `wrench_to_rotor_forces` function
 5. calculates rpms from the rotor forces using the `force_to_rpm` function
 6. calculates saturated rpms and returns
+
+![](./img/test_att_ctrl.png)
 
 ## 5. Grading with AutoLab
 To have your solutions graded, you will need to tar the `quadrotor_simulator_py`

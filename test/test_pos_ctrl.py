@@ -57,6 +57,8 @@ def test_pos_ctrl(config, npz_filepath):
     axs.plot(times, student_res[0,:], linewidth=3)
     axs.plot(times, correct_res[0,:])
     axs.legend(['Student solution', 'Correct solution'])
+    axs.set_xlabel('Time (s)')
+    axs.set_ylabel('Thrust')
     plt.suptitle('Desired thrust')
     plt.show()
 
@@ -65,6 +67,8 @@ def test_pos_ctrl(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, student_res[10+i, :], linewidth=3)
         axs[i].plot(times, correct_res[10+i, :])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('ang vel (rad/s)')
     plt.suptitle('Desired angular velocity')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
@@ -74,6 +78,8 @@ def test_pos_ctrl(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, student_res[13+i, :], linewidth=3)
         axs[i].plot(times, correct_res[13+i, :])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('ang acc (rad/s^2)')
     plt.suptitle('Desired angular acceleration')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()

@@ -66,6 +66,8 @@ def test_ode_step(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, pos[i,:], linewidth=3)
         axs[i].plot(times, correct_pos[i,:])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('position (m)')
     plt.suptitle('position')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
@@ -75,6 +77,8 @@ def test_ode_step(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, vel[i,:], linewidth=3)
         axs[i].plot(times, correct_vel[i,:])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('velocity (m/s)')
     plt.suptitle('velocity')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
@@ -84,6 +88,8 @@ def test_ode_step(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, acc[i,:], linewidth=3)
         axs[i].plot(times, correct_acc[i,:])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('acc (m/$s^2$)')
     plt.suptitle('acceleration')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
@@ -93,6 +99,8 @@ def test_ode_step(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, angvel[i,:], linewidth=3)
         axs[i].plot(times, correct_angvel[i,:])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('ang vel (rad/s)')
     plt.suptitle('angular velocity')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
@@ -102,6 +110,8 @@ def test_ode_step(config, npz_filepath):
     for i in range(0, 3):
         axs[i].plot(times, angacc[i,:], linewidth=3)
         axs[i].plot(times, correct_angacc[i,:])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('ang acc (rad/$s^2$)')
     plt.suptitle('angular acceleration')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()

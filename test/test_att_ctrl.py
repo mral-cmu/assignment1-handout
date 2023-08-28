@@ -46,6 +46,8 @@ def test_att_ctrl(config, npz_filepath):
     for i in range(0, 4):
         axs[i].plot(times, rpms[i, :], linewidth=3)
         axs[i].plot(times, correct_rpms[i, :])
+        axs[i].set_xlabel('Time (s)')
+        axs[i].set_ylabel('RPM')
     plt.suptitle('RPMs')
     axs[0].legend(['Student solution', 'Correct solution'])
     plt.show()
