@@ -22,12 +22,17 @@ You will need to install the following dependencies.
 pip install scipy pyyaml numpy matplotlib scikit-learn gdown
 ```
 Download the assignment.
-```python
+```bash
 git clone git@github.com:mral-cmu/assignment1-handout.git
 ```
 Note: if the above command results in a `Permission denied (public key)`
 error, then try setting up an SSH key in your Github account using the
 instructions [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+If the cloning still does not work, use
+```bash
+git clone https://github.com/mral-cmu/assignment1-handout.git
+```
 
 Sample data is provided to check your answers. You may download
 this data using the download script in the `data` directory.
