@@ -232,6 +232,10 @@ Autolab will run tests on each function you implement and you will
 receive a score out of 100.  You may upload as many times as you like.
 Note that we may regrade submissions after the deadline passes.
 
+## 6. Visualization with ROS2
+If you would like to visualize your solution with ROS2, follow the steps
+[here](https://github.com/mral-cmu/quadrotor_simulator_ws#readme).
+
 ## References
 [1] D. W. Mellinger, "Trajectory Generation and Control for Quadrotors" (2012). Publicly Accessible Penn Dissertations. 547. [https://repository.upenn.edu/edissertations/547](https://repository.upenn.edu/edissertations/547).
 
