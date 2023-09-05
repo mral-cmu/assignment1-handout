@@ -37,7 +37,7 @@ git clone https://github.com/mral-cmu/assignment1-handout.git
 Sample data is provided to check your answers. You may download
 this data using the download script in the `data` directory.
 ```python
-./download.py
+python download.py
 ```
 
 ## 1.0 Rotations (20 points)
