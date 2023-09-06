@@ -129,7 +129,7 @@ In this function, you will need to implement the following:
 * Convert commanded RPMs (coming from the controller) to desired force and torques
 * calculate the angular acceleration (see 2.3)
 * calculate the linear acceleration (see 2.2)
-* calculate the derivative of the quaternion using Equation (7) of [2].
+* calculate the derivative of the quaternion using the lecture notes.
 * calculate the achieved RPMs
 
 ## Checking your results
@@ -162,7 +162,7 @@ this function.
 
 ### 3.2 `compute_orientation`
 This function calculates the desired orientation.  Use Equations (33)
--- (36) from [4] to implement this function.
+-- (36) from [3] to implement this function.
 
 The lecture slides on quadrotor control also discuss how to implement
 this function in detail.
@@ -170,8 +170,8 @@ this function in detail.
 ### 3.3 `compute_hod_refs`
 This function uses the desired acceleration vector, flat reference,
 and desired rotation to calculate the desired angular velocities and
-accelerations.  Use Equations (14)--(25) of [3] to calculate the
-angular velocities.  Use Equation (103)--(105) of [4] to calculate the
+accelerations.  Use Equations (14)--(25) of [2] to calculate the
+angular velocities.  Use Equation (103)--(105) of [3] to calculate the
 angular velocities. Disregard the drag component (i.e., set it to
 zero) to make your life easier.
 
@@ -181,7 +181,7 @@ this function in detail.
 ### 3.4 `compute_command`
 This function contains the following functionality:
 1. computes the PD feedback-control terms from the position and
-   velocity control errors via Equation (32) of [3]
+   velocity control errors via Equation (32) of [2]
 2. computes the desired rotation `compute_orientation`
 3. applies the thrust command to the current body frame `compute_body_z_accel`
 4. calculates the desired angular velocities and accelerations, which will
@@ -212,7 +212,7 @@ This function contains the following functionality:
 1. calculates the rotation error metric (see page 21 of [1])
 2. calculates the PD control law discussed in the lecture slides
 3. calculates the desired moments by pre-multiplying Equation 2.68 of
-   [5] by the inertia matrix.
+   [4] by the inertia matrix.
 4. calculates the rotor forces using the `wrench_to_rotor_forces` function
 5. calculates rpms from the rotor forces using the `force_to_rpm` function
 6. calculates saturated rpms and returns
@@ -239,10 +239,8 @@ If you would like to visualize your solution with ROS2, follow the steps
 ## References
 [1] D. W. Mellinger, "Trajectory Generation and Control for Quadrotors" (2012). Publicly Accessible Penn Dissertations. 547. [https://repository.upenn.edu/edissertations/547](https://repository.upenn.edu/edissertations/547).
 
-[2] E. Fresk and G. Nikolakopoulos, "Full quaternion based attitude control for a quadrotor," 2013 European Control Conference (ECC), Zurich, Switzerland, 2013, pp. 3864-3869, [doi: 10.23919/ECC.2013.6669617](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6669617).
+[2] M. Faessler, A. Franchi, and D. Scaramuzza, "Differential Flatness of Quadrotor Dynamics Subject to Rotor Drag for Accurate Tracking of High-Speed Trajectories." [https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
 
-[3] M. Faessler, A. Franchi, and D. Scaramuzza, "Differential Flatness of Quadrotor Dynamics Subject to Rotor Drag for Accurate Tracking of High-Speed Trajectories." [https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
+[3] M. Faessler, A. Franchi, and D. Scaramuzza, "Detailed Derivations of ``Differential Flatness of Quadrotor Dynamics Subject to Rotor Drag for Accurate Tracking of High-Speed Trajectories''". [https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
 
-[4] M. Faessler, A. Franchi, and D. Scaramuzza, "Detailed Derivations of ``Differential Flatness of Quadrotor Dynamics Subject to Rotor Drag for Accurate Tracking of High-Speed Trajectories''". [https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
-
-[5] A. Spitzer, "Dynamical Model Learning and Inversion for Aggressive Quadrotor Flight". CMU-RI-TR-22-03. [https://www.ri.cmu.edu/app/uploads/2022/01/aspitzer_phd_ri_2022.pdf](https://www.ri.cmu.edu/app/uploads/2022/01/aspitzer_phd_ri_2022.pdf)
+[4] A. Spitzer, "Dynamical Model Learning and Inversion for Aggressive Quadrotor Flight". CMU-RI-TR-22-03. [https://www.ri.cmu.edu/app/uploads/2022/01/aspitzer_phd_ri_2022.pdf](https://www.ri.cmu.edu/app/uploads/2022/01/aspitzer_phd_ri_2022.pdf)
