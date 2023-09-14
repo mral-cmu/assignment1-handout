@@ -203,7 +203,7 @@ class QuadrotorModel:
                 offset of the center of mass in body frame coordinates (r_{off})
             moments: 3x1 numpy array representing the moments
             wb: 3x1 numpy array representing body-frame angular velocities
-            Fdes: scalar representing desired vehicle thrust
+            Fdes: 3x1 numpy array representing [0, 0, F]
 
         Output:
             ang acc: 3x1 numpy array representing angular acceleration
