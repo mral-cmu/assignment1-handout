@@ -237,6 +237,13 @@ class QuadrotorModel:
 
         # TODO: Assignment 1, Problem 2.4
 
+
+        # Uncomment these lines and replace aw with your calculated
+        # linear acceleration. Replace ang_acc with your calculated
+        # angular acceleration
+        #self.model_params.aw = aw
+        #self.model_params.ang_acc = ang_acc
+
         xdot = np.zeros((17, 1))
         return xdot.flatten()
 
