@@ -181,7 +181,7 @@ this function in detail.
 ### 3.4 `compute_command`
 This function contains the following functionality:
 1. computes the PD feedback-control terms from the position and
-   velocity control errors via Equation (32) of [2]
+   velocity control errors via Equations (31)--(32) of [2] and where a_{rd} = 0
 2. computes the desired rotation `compute_orientation`
 3. applies the thrust command to the current body frame `compute_body_z_accel`
 4. calculates the desired angular velocities and accelerations, which will
