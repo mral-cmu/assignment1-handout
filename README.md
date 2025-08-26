@@ -105,31 +105,42 @@ To receive full credit on this portion of the assignment,
 you will need to implement the following four functions:
 
 * `construct_mixer` (5 points)
+* `calculate_force_and_torque_from_rpm` (5 points)
+* `calculate_quadrotor_derivative` (5 points)
 * `calculate_world_frame_linear_acceleration` (5 points)
 * `calculate_angular_acceleration` (5 points)
-* `ode_step` (15 points)
+* `ode_step` (25 points)
 
 ### 2.1 `construct_mixer`
 This function implements the mixer matrix as described in the lecture
-slides.
+slides. There is no local test for this function. To check your results,
+you will need to upload your function to AutoLab.
 
-### 2.2 `calculate_world_frame_linear_acceleration`
+### 2.2 `calculate_force_and_torque_from_rpm` (5 points)
+This function calculates the scalar force and 3x1 torque vector from a
+vector of 4 RPM values using the motor model discussed in class.
+
+### 2.3 `quaternion_derivative` (5 points)
+This function calculates the derivative of the quaternion using the
+formula covered in the slides.
+
+### 2.4 `calculate_world_frame_linear_acceleration` (5 points)
 In this function you will implement Equation (4.2) from [1].
 
-### 2.3 `calculate_angular_acceleration`
+### 2.5 `calculate_angular_acceleration` (5 points)
 In this function you will implement Equation (4.3) from [1].
 
-### 2.4 `ode_step`
+### 2.6 `ode_step` (25 points)
 This function implements the equations of motion for the quadrotor
 dynamics model. The ODE solver is used to integrate the equations over
-a period of time. The other two functions (1.1) and (1.2) will be
-called in `ode_step`.
+a period of time. The functions (2.1 -- 2.5) will be called within
+this function.
 
 In this function, you will need to implement the following:
-* Convert commanded RPMs (coming from the controller) to desired force and torques
-* calculate the angular acceleration (see 2.3)
-* calculate the linear acceleration (see 2.2)
-* calculate the derivative of the quaternion using the lecture notes.
+* convert commanded RPMs (coming from the controller) to desired force and torques (see 2.2)
+* calculate the derivative of the quaternion using the lecture notes. (see 2.3)
+* calculate the linear acceleration (see 2.4)
+* calculate the angular acceleration (see 2.5)
 * calculate the achieved RPMs
 
 ## Checking your results
