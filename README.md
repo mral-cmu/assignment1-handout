@@ -93,7 +93,7 @@ matrix.
 ### 1.8 `compose`
 This function calculates the composition of two transforms.
 
-### 1.8 `inverse`
+### 1.9 `inverse`
 This function calculates the inverse of the homogeneous transform.
 
 ## Checking your results
