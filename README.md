@@ -156,7 +156,7 @@ In this function, you will need to implement the following:
 * calculate the achieved RPMs
 
 ## Checking your results
-There is a test in `/test/test_ode_step.py`. If your results are
+There is a test in `/test/test_quadrotor_simulator.py`. If your results are
 correct, you should see the following output.
 
 ![](./img/test_ode_step_pos.png)
