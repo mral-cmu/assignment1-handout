@@ -40,7 +40,7 @@ this data using the download script in the `data` directory.
 python download.py
 ```
 
-## 1.0 Rotations (20 points)
+## 1.0 Rotations and Pose (10 points)
 The directory containing rotation representations is in `rotation3.py`.
 In this part of the assignment you will write the code to perform
 the following conversions:
@@ -55,6 +55,9 @@ More information about each function follows.
 Your code will be graded using Autolab. See Section 5 for
 details about uploading and receiving scores for your
 implementations.
+
+Functions 1.1 -- 1.7 are found in `rotation3.py`. Functions 1.8 and
+1.9 may be found in `pose.py`.
 
 ### 1.1 `to_euler_zyx`
 This function calculates the angles `phi=X`, `theta=Y`, `psi=Z` that
@@ -87,14 +90,23 @@ This function calculates the 3x3 rotation matrix from a
 This function calculates the (w,x,y,z) quaternion from a 3x3 rotation
 matrix.
 
+### 1.8 `compose`
+This function calculates the composition of two transforms.
+
+### 1.8 `inverse`
+This function calculates the inverse of the homogeneous transform.
+
 ## Checking your results
-There is a test in `test/test_orientation.py`. It will print out
+There are two test files for this section. Functions 1.1 -- 1.7
+have their test cases in `test/test_orientation.py`. It will print out
 ```python
 Tests Passed
 ```
-on success and assert an error if it fails.
+on success and assert an error if it fails. Functions 1.8 and 1.9 have
+their test cases in `test/test_pose.py`. The test will print out
+`passed` or `failure` for each test case.
 
-## 2. Quadrotor Simulator (50 points)
+## 2. Quadrotor Simulator (45 points)
 The quadrotor simulator is contained in `quadrotor_simulator_py`. You
 will implement functions in this folder, zip your folder, and upload
 to Autolab for grading.
@@ -106,12 +118,12 @@ you will need to implement the following four functions:
 
 * `construct_mixer` (5 points)
 * `calculate_force_and_torque_from_rpm` (5 points)
-* `calculate_quadrotor_derivative` (5 points)
+* `calculate_quaternion_derivative` (5 points)
 * `calculate_world_frame_linear_acceleration` (5 points)
 * `calculate_angular_acceleration` (5 points)
-* `ode_step` (25 points)
+* `ode_step` (20 points)
 
-### 2.1 `construct_mixer`
+### 2.1 `construct_mixer` (5 points)
 This function implements the mixer matrix as described in the lecture
 slides. There is no local test for this function. To check your results,
 you will need to upload your function to AutoLab.
@@ -130,7 +142,7 @@ In this function you will implement Equation (4.2) from [1].
 ### 2.5 `calculate_angular_acceleration` (5 points)
 In this function you will implement Equation (4.3) from [1].
 
-### 2.6 `ode_step` (25 points)
+### 2.6 `ode_step` (20 points)
 This function implements the equations of motion for the quadrotor
 dynamics model. The ODE solver is used to integrate the equations over
 a period of time. The functions (2.1 -- 2.5) will be called within
@@ -153,7 +165,7 @@ correct, you should see the following output.
 ![](./img/test_ode_step_angvel.png)
 ![](./img/test_ode_step_angacc.png)
 
-## 3. Position Controller (15 points)
+## 3. Position Controller (25 points)
 You will need to write the following functions:
 
 * `compute_body_z_accel`
@@ -202,7 +214,7 @@ This function contains the following functionality:
 ![](./img/test_pos_ctrl_angvel.png)
 ![](./img/test_pos_ctrl_thrust.png)
 
-## 4. Attitude Controller (15 points)
+## 4. Attitude Controller (20 points)
 You will need to write the following functions:
 
 * `wrench_to_rotor_forces`

@@ -44,3 +44,30 @@ class Pose:
     def quaternion(self):
         R = Rot3(self.se3[0:3, 0:3])
         return R.to_quat().data
+
+    def set_rotation(self, R):
+        self.se3[0:3, 0:3] = R
+
+    def quaternion(self):
+        R = Rot3(self.se3[0:3, 0:3])
+        return R.to_quat().data
+
+    def compose(self, T):
+        """  Return the composition of self.T * T
+        """
+
+        # TODO: Assignment 1: Problem 1.8
+        return Pose()
+
+    # Take the inverse of a homogeneous transform
+    def inverse(self):
+        """ Return the inverse of the homogeneous
+                transform
+
+        Output:
+            Pose: Pose object that represents the inverse
+                  of  the input
+        """
+
+        # TODO: Assignment 1: Problem 1.9
+        return Pose()
