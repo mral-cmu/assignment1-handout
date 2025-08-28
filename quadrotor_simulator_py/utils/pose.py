@@ -48,10 +48,6 @@ class Pose:
     def set_rotation(self, R):
         self.se3[0:3, 0:3] = R
 
-    def quaternion(self):
-        R = Rot3(self.se3[0:3, 0:3])
-        return R.to_quat().data
-
     def compose(self, T):
         """  Return the composition of self.T * T
         """
