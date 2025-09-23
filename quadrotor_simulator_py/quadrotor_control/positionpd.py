@@ -23,7 +23,7 @@ class QuadrotorPositionControllerPD:
 
         self.Rdes = np.eye(3)
         self.Rcurr = None
-        self.accel_des = 0.0
+        self.body_z_accel_des = 0.0  # Desired acceleration along body Z axis (scalar)
         self.angvel_des = np.zeros((3, 1))
         self.angacc_des = np.zeros((3, 1))
         self.mass = 0.0
@@ -127,7 +127,7 @@ class QuadrotorPositionControllerPD:
 
     def get_cascaded_command(self):
         casc_cmd = CascadedCommand()
-        casc_cmd.thrust_des = self.mass * self.accel_des
+        casc_cmd.thrust_des = self.mass * self.body_z_accel_des
         casc_cmd.Rdes = self.Rdes
         casc_cmd.angvel_des = self.angvel_des
         casc_cmd.angacc_des = self.angacc_des
