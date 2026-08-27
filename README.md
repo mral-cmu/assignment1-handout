@@ -242,16 +242,16 @@ This function contains the following functionality:
 
 ![](./img/test_att_ctrl.png)
 
-## 5. Grading with AutoLab
-To have your solutions graded, you will need to tar the `quadrotor_simulator_py`
-folder and upload to autolab.
+## 5. Grading with Gradescope
+To have your solutions graded, you will need to zip the `quadrotor_simulator_py`
+folder and upload to Gradescope.
 
 ```
 cd assignment1-handout
-tar -cvf handin.tar quadrotor_simulator_py
+zip -r handin.zip quadrotor_simulator_py
 ```
 
-Autolab will run tests on each function you implement and you will
+Gradescope will run tests on each function you implement and you will
 receive a score out of 100.  You may upload as many times as you like.
 Note that we may regrade submissions after the deadline passes.
 
